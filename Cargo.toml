@@ -1,14 +1,20 @@
 [package]
-name = "ssh_cfg"
+name = "ssh_cnfg"
 version = "0.3.0"
 authors = ["Azriel Hoh <azriel91@gmail.com>"]
 edition = "2018"
 description = "Parses `~/.ssh/config` asynchronously."
-repository = "https://github.com/azriel91/ssh_cfg"
-documentation = "https://docs.rs/ssh_cfg/"
+repository = "https://github.com/chevdor/ssh_cfg"
+documentation = "https://docs.rs/ssh_cnfg/"
 readme = "README.md"
 keywords = ["ssh", "async"]
 license = "MIT OR Apache-2.0"
+
+# The crate is published as `ssh_cnfg` (crates.io has a flat namespace, so the
+# upstream `ssh_cfg` name is unavailable), but the library keeps the `ssh_cfg`
+# import name so `use ssh_cfg::...` continues to work.
+[lib]
+name = "ssh_cfg"
 
 [dependencies]
 async-fs = "1.5.0"

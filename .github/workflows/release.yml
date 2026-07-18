@@ -9,8 +9,21 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  crates_io:
+    name: Publish to crates.io
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Publish ssh_cnfg
+        run: cargo publish --token "$CARGO_REGISTRY_TOKEN"
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+
+  github_release:
     name: Create GitHub Release
+    needs: crates_io
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
