@@ -1,7 +1,11 @@
 [package]
 name = "ssh_cnfg"
 version = "0.3.0"
-authors = ["Azriel Hoh <azriel91@gmail.com>"]
+authors = [
+    "Azriel Hoh <azriel91@gmail.com>",
+    "Julien-R44 <https://crates.io/users/Julien-R44>",
+    "Chevdor <chevdor@gmail.com>",
+]
 edition = "2018"
 description = "Parses `~/.ssh/config` asynchronously."
 repository = "https://github.com/chevdor/ssh_cfg"
